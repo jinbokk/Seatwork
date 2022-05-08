@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>object</title>
+</head>
+
+<body>
+
+  <h1>object</h1>
+  <script>
+    let coworkers = {
+      "programmer": "egoing",
+      "designer": "leezche"
+    };
+    document.write("programmer : " + coworkers.programmer + " <br>");
+    document.write("designer : " + coworkers.designer + " <br>");
+    coworkers.bookkeeper = "duru";
+    document.write("bookkeeper : " + coworkers.bookkeeper + " <br>");
+    coworkers["data scientist"] = "taeho"; // 띄어쓰기를 하며 배열에 값을 추가하는 방법
+    document.write("data scientist : " + coworkers["data scientist"] + " <br>");
+  </script>
+
+  <h2>iteration</h2>
+  <script>
+    for (let key in coworkers) { // coworkers 안의 key 값을 가져오는 반복문
+      document.write(key + '<br>')
+      document.write(coworkers[key] + '<br>')
+      document.write(key + ' : ' + coworkers[key] + '<br>')
+    }
+  </script>
+
+  <h2>property & method</h2>
+  <script>
+    coworkers.showAll = function () { // method를 만드는 방법
+      for (let key in this) {
+        document.write(key + ' : ' + coworkers[key] + '<br>')
+      }
+    }
+    coworkers.showAll();
+  </script>
+
+</body>
+
+</html>
